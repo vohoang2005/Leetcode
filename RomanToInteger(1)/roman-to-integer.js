@@ -1,13 +1,11 @@
-const roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
-
-var romanToInt = function(S) {
-  let ans = 0;
-  for (let i = S.length-1; ~i; i--) {
-    let num = roman[S.charAt(i)]
-    if (4 * num < ans) ans -= num
-    else ans += num
+var romanToInt = function(s) {
+  const map = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000};
+  let num = 0;
+  
+  for(let i = 0; i < s.length; i++) {
+      const curr = map[s[i]], next = map[s[i+1]];
+      if(curr < next) num -= curr;
+      else num += curr;
   }
-  return ans
-}
-
-S = "III"
+  return num;    
+};
