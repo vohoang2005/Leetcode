@@ -4,7 +4,7 @@ var isPalindrome = function(x) {
     return x == x.toString().split('').reverse().join('');
   };
 
-// 80% Runtime & 46% Memory
+// 80% Runtime & 46% Memory, negative numbers will fail Palindrome.
 var isPalindrome = function(x) {
     let num = x.toString();
     for(let i = 0; i < (num.length/2); i++) {
