@@ -1,13 +1,13 @@
 // Good way to compare duplicates and to remove.
 
-var deleteDuplicates = function(head) {
-    let current = head;
-        while(current !== null && current.next !== null) {
-            if(current.val === current.next.val) {
-              current.next = current.next.next
-        } else {
-            current = current.next;
-        }
+var removeDuplicates = function(nums) {
+    let i = 0;
+    
+    for(let j = 0; j < nums.length; j++ ) {
+        if (nums[j] != nums[j - 1]) {
+            nums[i] = nums[j];
+            i++
+        }   
     }
-    return head;
-};
+    return i;
+}
